@@ -6,6 +6,9 @@ public class TradeOffer {
   private String priceOrService;
   private String status;
 
+  public TradeOffer() {
+  }
+
   public TradeOffer(String owner, String tradeOffer, String priceOrService, String status) {
     this.owner = owner;
     this.tradeOffer = tradeOffer;
