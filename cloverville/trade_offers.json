@@ -1,0 +1,26 @@
+[
+  {
+    "owner": "Alice",
+    "tradeOffer": "bvgh",
+    "priceOrService": "hvh",
+    "status": "Assigned"
+  },
+  {
+    "owner": "Bob",
+    "tradeOffer": "jhwqhd",
+    "priceOrService": "5",
+    "status": "Assigned"
+  },
+  {
+    "owner": "Bob",
+    "tradeOffer": "hbh",
+    "priceOrService": "5",
+    "status": "Assigned"
+  },
+  {
+    "owner": "Bob",
+    "tradeOffer": "hbh",
+    "priceOrService": "5",
+    "status": "Assigned"
+  }
+]

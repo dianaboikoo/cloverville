@@ -1,0 +1,69 @@
+[
+  {
+    "name": "Alice",
+    "personalPoints": 10,
+    "assignedTradeOffers": [
+      {
+        "owner": "Bob",
+        "tradeOffer": "jhwqhd",
+        "priceOrService": "5",
+        "status": "Assigned"
+      },
+      {
+        "owner": "Bob",
+        "tradeOffer": "test1",
+        "priceOrService": "5",
+        "status": "Assigned"
+      },
+      {
+        "owner": "Bob",
+        "tradeOffer": "hdcw",
+        "priceOrService": "5",
+        "status": "Assigned"
+      },
+      {
+        "owner": "Bob",
+        "tradeOffer": "hbh",
+        "priceOrService": "5",
+        "status": "Assigned"
+      },
+      {
+        "owner": "Bob",
+        "tradeOffer": "67",
+        "priceOrService": "5",
+        "status": "Assigned"
+      },
+      {
+        "owner": "Bob",
+        "tradeOffer": "t3",
+        "priceOrService": "5",
+        "status": "Assigned"
+      },
+      {
+        "owner": "Bob",
+        "tradeOffer": "hbh",
+        "priceOrService": "5",
+        "status": "Assigned"
+      }
+    ]
+  },
+  {
+    "name": "Bob",
+    "personalPoints": 5,
+    "assignedTradeOffers": [
+      {
+        "owner": "Alice",
+        "tradeOffer": "bvgh",
+        "priceOrService": "hvh",
+        "status": "Assigned"
+      },
+      {
+        "owner": "Bob",
+        "tradeOffer": "testt2",
+        "priceOrService": "5",
+        "status": "Assigned",
+        "pointCost": 5
+      }
+    ]
+  }
+]
