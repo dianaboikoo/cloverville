@@ -1,14 +1,26 @@
 [
   {
-    "owner": "daskj",
-    "tradeOffer": "sahcd",
-    "priceOrService": "asd",
-    "status": "hdbshajscnxja"
+    "owner": "Alice",
+    "tradeOffer": "bvgh",
+    "priceOrService": "hvh",
+    "status": "Assigned"
   },
   {
-    "owner": "sdgcx",
-    "tradeOffer": "sbxc",
-    "priceOrService": "sahgc",
-    "status": "jhsbdxw"
+    "owner": "Bob",
+    "tradeOffer": "jhwqhd",
+    "priceOrService": "5",
+    "status": "Assigned"
+  },
+  {
+    "owner": "Bob",
+    "tradeOffer": "hbh",
+    "priceOrService": "5",
+    "status": "Assigned"
+  },
+  {
+    "owner": "Bob",
+    "tradeOffer": "hbh",
+    "priceOrService": "5",
+    "status": "Assigned"
   }
 ]

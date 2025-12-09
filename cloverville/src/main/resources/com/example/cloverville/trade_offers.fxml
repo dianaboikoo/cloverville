@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cloverville.TradeOffersController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="448.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cloverville.TradeOffersController">
    <children>
       <TableView fx:id="tradeTable" layoutX="23.0" layoutY="29.0" prefHeight="200.0" prefWidth="555.0">
         <columns>
@@ -18,15 +20,19 @@
         </columns>
       </TableView>
       <TextField fx:id="statusField" layoutX="23.0" layoutY="275.0" prefHeight="25.0" prefWidth="95.0" />
-      <TextField fx:id="ownerField" layoutX="131.0" layoutY="275.0" prefHeight="25.0" prefWidth="95.0" />
-      <TextField fx:id="offerField" layoutX="240.0" layoutY="275.0" prefHeight="25.0" prefWidth="95.0" />
-      <TextField fx:id="priceField" layoutX="347.0" layoutY="275.0" prefHeight="25.0" prefWidth="95.0" />
+      <TextField fx:id="offerField" layoutX="288.0" layoutY="276.0" prefHeight="25.0" prefWidth="95.0" />
+      <TextField fx:id="priceField" layoutX="395.0" layoutY="276.0" prefHeight="25.0" prefWidth="95.0" />
       <Label layoutX="23.0" layoutY="246.0" text="Status" />
       <Label layoutX="131.0" layoutY="246.0" text="Owner" />
-      <Label layoutX="240.0" layoutY="246.0" text="Trade Offer" />
-      <Label layoutX="347.0" layoutY="246.0" text="Price/Service" />
+      <Label layoutX="288.0" layoutY="247.0" text="Trade Offer" />
+      <Label layoutX="395.0" layoutY="247.0" text="Price/Service" />
       <Button layoutX="23.0" layoutY="327.0" mnemonicParsing="false" onAction="#handleAddOffer" text="Add Offer" />
-      <Button layoutX="479.0" layoutY="327.0" mnemonicParsing="false" onAction="#handleDeleteOffer" text="Delete Selected" />
-      <Button layoutX="131.0" layoutY="327.0" mnemonicParsing="false" onAction="#handleEditOffer" text="Edit Selected" />
+      <Button layoutX="23.0" layoutY="400.0" mnemonicParsing="false" onAction="#handleDeleteOffer" text="Delete Selected" />
+      <Button layoutX="23.0" layoutY="365.0" mnemonicParsing="false" onAction="#handleEditOffer" text="Edit Selected" />
+      <ComboBox fx:id="residentComboBox" layoutX="288.0" layoutY="327.0" prefWidth="150.0" promptText="Select Resident" />
+      <Button layoutX="460.0" layoutY="327.0" mnemonicParsing="false" onAction="#handleAssignOffer" text="Assign to Resident" />
+      <ComboBox fx:id="ownerComboBox" layoutX="131.0" layoutY="276.0" prefWidth="150.0" />
+      <TextField fx:id="pointCostField" layoutX="289.0" layoutY="387.0" />
+      <Text layoutX="289.0" layoutY="378.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Point cost (optional)" />
    </children>
 </AnchorPane>
