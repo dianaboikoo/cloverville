@@ -5,13 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ef4195a2-78d2-4f40-b178-c156f9c18360" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/dianas_test_residents.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/cloverville/Resident.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cloverville/TradeOffer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cloverville/TradeOffer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cloverville/TradeOffersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cloverville/TradeOffersController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/cloverville/trade_offers.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/cloverville/trade_offers.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trade_offers.json" beforeDir="false" afterPath="$PROJECT_DIR$/trade_offers.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
