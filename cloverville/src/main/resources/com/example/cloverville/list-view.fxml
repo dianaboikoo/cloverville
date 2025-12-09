@@ -5,7 +5,7 @@
 <?import javafx.geometry.Insets?>
 
 <BorderPane xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.residents.HelloController">
+            fx:controller="com.example.residents.ListController">
 
     <left>
         <ListView fx:id="listView" prefWidth="200"/>
