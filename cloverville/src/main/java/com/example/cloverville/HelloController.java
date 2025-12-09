@@ -40,4 +40,15 @@ public class HelloController
     stage.setScene(scene);
     stage.show();
   }
+
+    @FXML
+    public void openGreenActions() throws IOException
+    {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("green-action.fxml"));
+        Scene scene = new Scene(loader.load());
+        Stage stage = new Stage();
+        stage.setTitle("Green Actions");
+        stage.setScene(scene);
+        stage.show();
+    }
 }

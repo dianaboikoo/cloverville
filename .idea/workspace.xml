@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2a14ccf3-43cb-41d6-82d7-d797405156a1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/cloverville/src/main/resources/com/example/cloverville/trade_offers.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/cloverville/src/main/resources/com/example/cloverville/trade_offers.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,9 +34,21 @@
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/boiko/Documents/GitHub/cloverville"
+    "last_opened_file_path": "C:/Users/marcu/Documents/GitHub/cloverville",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="cloverville" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="2a14ccf3-43cb-41d6-82d7-d797405156a1" name="Changes" comment="" />

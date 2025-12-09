@@ -28,7 +28,7 @@ import java.util.ResourceBundle;
 public class TradeOffersController implements Initializable {
 
   private static final String OFFERS_FILE = "trade_offers.json";
-  private static final String RESIDENTS_FILE = "dianas_test_residents.json";
+  private static final String RESIDENTS_FILE = "residents.json";
 
   @FXML
   private TableView<TradeOffer> tradeTable;

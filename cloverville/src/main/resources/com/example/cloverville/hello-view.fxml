@@ -7,6 +7,6 @@
    <children>
       <Button layoutX="43.0" layoutY="281.0" mnemonicParsing="false" onAction="#openTradeOffers" prefHeight="55.0" prefWidth="101.0" text="Trade Offers" />
       <Button layoutX="207.0" layoutY="281.0" mnemonicParsing="false" onAction="#openResidents" prefHeight="55.0" prefWidth="109.0" text="Residents page" />
-      <Button layoutX="358.0" layoutY="281.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="146.0" text="Green Actions Page" />
+      <Button layoutX="358.0" layoutY="281.0" mnemonicParsing="false" onAction="#openGreenActions" prefHeight="55.0" prefWidth="146.0" text="Green Actions Page" />
    </children>
 </AnchorPane>
