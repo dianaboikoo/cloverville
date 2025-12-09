@@ -1,52 +1,57 @@
 package com.example.cloverville;
 
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Resident {
 
-  private String name;
-  private int personalPoints;
-  private List<TradeOffer> assignedTradeOffers;
+  private final StringProperty name = new SimpleStringProperty();
+  private final IntegerProperty personalPoints = new SimpleIntegerProperty();
+  private final IntegerProperty greenPoints = new SimpleIntegerProperty();
 
-  // Needed by Gson
+  // 🔹 NEW: list of assigned trade offers (normal field, not a property)
+  private List<TradeOffer> assignedTradeOffers = new ArrayList<>();
+
+  // 🔹 Needed by Gson for JSON loading
   public Resident() {
-    this.assignedTradeOffers = new ArrayList<>();
+    // properties are already initialised above
   }
 
-  public Resident(String name, int personalPoints) {
-    this.name = name;
-    this.personalPoints = personalPoints;
-    this.assignedTradeOffers = new ArrayList<>();
+  public Resident(String name, int personalPoints, int greenPoints) {
+    this(); // call no-arg constructor
+    this.name.set(name);
+    this.personalPoints.set(personalPoints);
+    this.greenPoints.set(greenPoints);
   }
 
-  public String getName() {
-    return name;
-  }
+  public String getName() { return name.get(); }
+  public void setName(String n) { name.set(n); }
+  public StringProperty nameProperty() { return name; }
 
-  public int getPersonalPoints() {
-    return personalPoints;
-  }
+  public int getPersonalPoints() { return personalPoints.get(); }
+  public void setPersonalPoints(int p) { personalPoints.set(p); }
+  public IntegerProperty personalPointsProperty() { return personalPoints; }
 
+  public int getGreenPoints() { return greenPoints.get(); }
+  public void setGreenPoints(int g) { greenPoints.set(g); }
+  public IntegerProperty greenPointsProperty() { return greenPoints; }
+
+  // 🔹 NEW: used by TradeOffersController
   public List<TradeOffer> getAssignedTradeOffers() {
     return assignedTradeOffers;
-  }
-
-  public void setName(String name) {
-    this.name = name;
-  }
-
-  public void setPersonalPoints(int personalPoints) {
-    this.personalPoints = personalPoints;
   }
 
   public void setAssignedTradeOffers(List<TradeOffer> assignedTradeOffers) {
     this.assignedTradeOffers = assignedTradeOffers;
   }
 
-  // So ComboBox shows the name
   @Override
   public String toString() {
-    return name;
+    return getName();
   }
 }

@@ -29,4 +29,15 @@ public class HelloController
     stage.setScene(scene);
     stage.show();
   }
+
+  @FXML
+  public void openResidents() throws IOException
+  {
+    FXMLLoader loader = new FXMLLoader(getClass().getResource("list-view.fxml"));
+    Scene scene = new Scene(loader.load());
+    Stage stage = new Stage();
+    stage.setTitle("Residents");
+    stage.setScene(scene);
+    stage.show();
+  }
 }
