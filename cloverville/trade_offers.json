@@ -22,5 +22,11 @@
     "tradeOffer": "hbh",
     "priceOrService": "5",
     "status": "Assigned"
+  },
+  {
+    "owner": "LALIPUP",
+    "tradeOffer": "nhqhs",
+    "priceOrService": "10",
+    "status": "Assigned to LOLILO"
   }
 ]

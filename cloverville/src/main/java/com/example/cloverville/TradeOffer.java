@@ -28,4 +28,10 @@ public class TradeOffer {
   public void setPriceOrService(String priceOrService) { this.priceOrService = priceOrService; }
   public void setStatus(String status) { this.status = status; }
   public void setPointCost(Integer pointCost) { this.pointCost = pointCost; }
+
+  @Override
+  public String toString() {
+    return tradeOffer + " (" + owner + ")";
+  }
+
 }

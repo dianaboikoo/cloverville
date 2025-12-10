@@ -1,3 +1,21 @@
 [
-  {"personalPoints":0,"name":"Lolalo","greenPoints":0}
+  {
+    "name": "LALIPUP",
+    "personalPoints": 10,
+    "greenPoints": 0,
+    "assignedTradeOffers": []
+  },
+  {
+    "name": "LOLILO",
+    "personalPoints": 20,
+    "greenPoints": 0,
+    "assignedTradeOffers": [
+      {
+        "owner": "LALIPUP",
+        "tradeOffer": "nhqhs",
+        "priceOrService": "10",
+        "status": "Assigned to LOLILO"
+      }
+    ]
+  }
 ]

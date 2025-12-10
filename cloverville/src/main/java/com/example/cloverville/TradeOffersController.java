@@ -30,41 +30,18 @@ public class TradeOffersController implements Initializable {
   private static final String OFFERS_FILE = "trade_offers.json";
   private static final String RESIDENTS_FILE = "residents.json";
 
-  @FXML
-  private TableView<TradeOffer> tradeTable;
+  @FXML private TableView<TradeOffer> tradeTable;
+  @FXML private TableColumn<TradeOffer, String> ownerColumn;
+  @FXML private TableColumn<TradeOffer, String> offerColumn;
+  @FXML private TableColumn<TradeOffer, String> priceColumn;
+  @FXML private TableColumn<TradeOffer, String> statusColumn;
 
-  @FXML
-  private TableColumn<TradeOffer, String> ownerColumn;
+  @FXML private TextField offerField;
+  @FXML private TextField priceField;
 
-  @FXML
-  private TableColumn<TradeOffer, String> offerColumn;
-
-  @FXML
-  private TableColumn<TradeOffer, String> priceColumn;
-
-  @FXML
-  private TableColumn<TradeOffer, String> statusColumn;
-
-  @FXML
-  private TextField pointCostField;
-
-  @FXML
-  private TextField offerField;
-
- // @FXML
- // private TextField ownerField;
-
-  @FXML
-  private TextField priceField;
-
-  @FXML
-  private TextField statusField;
-
-  @FXML
-  private ComboBox<Resident> residentComboBox;
-
-  @FXML
-  private ComboBox<Resident> ownerComboBox;
+  @FXML private ComboBox<Resident> ownerComboBox;
+  @FXML private ComboBox<Resident> residentComboBox;
+  @FXML private ComboBox<TradeOffer> taskComboBox;
 
   private ObservableList<TradeOffer> offers;
   private ObservableList<Resident> residents;
@@ -77,23 +54,20 @@ public class TradeOffersController implements Initializable {
     tradeTable.setItems(offers);
     residentComboBox.setItems(residents);
     ownerComboBox.setItems(residents);
+    taskComboBox.setItems(offers);
 
     ownerColumn.setCellValueFactory(new PropertyValueFactory<>("owner"));
     offerColumn.setCellValueFactory(new PropertyValueFactory<>("tradeOffer"));
     priceColumn.setCellValueFactory(new PropertyValueFactory<>("priceOrService"));
     statusColumn.setCellValueFactory(new PropertyValueFactory<>("status"));
 
-
     tradeTable.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
       if (newSelection != null) {
-      //  ownerField.setText(newSelection.getOwner());
         offerField.setText(newSelection.getTradeOffer());
         priceField.setText(newSelection.getPriceOrService());
-        statusField.setText(newSelection.getStatus());
       }
     });
 
-    // load from JSON at startup
     loadOffersFromJson();
     loadResidentsFromJson();
   }
@@ -102,54 +76,40 @@ public class TradeOffersController implements Initializable {
   private void handleAddOffer() {
     Resident owner = ownerComboBox.getSelectionModel().getSelectedItem();
     String offer = offerField.getText();
-    String price = priceField.getText();
-    String status = statusField.getText();
-    String pointCostText = pointCostField.getText();
-
-    System.out.println("=== ADD OFFER ===");
-    System.out.println("Owner selected: " + (owner == null ? "null" : owner.getName()));
-    System.out.println("Offer text: " + offer);
-    System.out.println("Point cost text field: '" + pointCostText + "'");
+    String priceDescription = priceField.getText();
 
     if (owner == null || offer.isBlank()) {
       System.out.println("No owner or empty offer -> aborting add.");
-      return; // must have owner + offer
+      return;
     }
 
+    // try to interpret price as points (optional)
     Integer pointCost = null;
-    if (!pointCostText.isBlank()) {
+    if (!priceDescription.isBlank()) {
       try {
-        pointCost = Integer.parseInt(pointCostText.trim());
+        pointCost = Integer.parseInt(priceDescription.trim());
       } catch (NumberFormatException e) {
-        System.out.println("Could not parse point cost: " + e.getMessage());
-        pointCost = null; // invalid input ignored
+        // not a number → treat as “service” description
+        pointCost = null;
       }
     }
-
-    System.out.println("Parsed point cost = " + pointCost);
 
     TradeOffer newOffer = new TradeOffer(
         owner.getName(),
         offer,
-        price,
-        status.isBlank() ? "Unassigned" : status,
+        priceDescription,
+        "Unassigned",
         pointCost
     );
 
     offers.add(newOffer);
 
-    // clear fields
     ownerComboBox.getSelectionModel().clearSelection();
     offerField.clear();
     priceField.clear();
-    statusField.clear();
-    pointCostField.clear();
 
     saveOffersToJson();
-    System.out.println("Offer saved to JSON.\n");
   }
-
-
 
   @FXML
   private void handleDeleteOffer() {
@@ -175,7 +135,6 @@ public class TradeOffersController implements Initializable {
    // selected.setOwner(ownerField.getText());
     selected.setTradeOffer(offerField.getText());
     selected.setPriceOrService(priceField.getText());
-    selected.setStatus(statusField.getText());
 
     tradeTable.refresh();
     saveOffersToJson();
@@ -183,19 +142,13 @@ public class TradeOffersController implements Initializable {
 
   @FXML
   private void handleAssignOffer() {
-    TradeOffer selectedOffer = tradeTable.getSelectionModel().getSelectedItem();
+    TradeOffer selectedOffer = taskComboBox.getSelectionModel().getSelectedItem();
     Resident assignedResident = residentComboBox.getSelectionModel().getSelectedItem();
 
     if (selectedOffer == null || assignedResident == null) {
-      System.out.println("No offer or resident selected.");
+      System.out.println("No task or resident selected.");
       return;
     }
-
-    System.out.println("=== ASSIGN OFFER ===");
-    System.out.println("Offer: " + selectedOffer.getTradeOffer());
-    System.out.println("Owner (string): " + selectedOffer.getOwner());
-    System.out.println("Assigned to: " + assignedResident.getName());
-    System.out.println("Point cost: " + selectedOffer.getPointCost());
 
     Resident ownerResident = residents.stream()
         .filter(r -> r.getName().equals(selectedOffer.getOwner()))
@@ -235,7 +188,7 @@ public class TradeOffersController implements Initializable {
       System.out.println("No point transfer (cost is null/0 or owner not found).");
     }
 
-    selectedOffer.setStatus("Assigned");
+    selectedOffer.setStatus("Assigned to " + assignedResident.getName());
     tradeTable.refresh();
 
     if (!assignedResident.getAssignedTradeOffers().contains(selectedOffer)) {
