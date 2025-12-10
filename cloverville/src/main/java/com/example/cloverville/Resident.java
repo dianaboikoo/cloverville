@@ -8,11 +8,14 @@ public class Resident {
   private String name;
   private int personalPoints;
   private int greenPoints;
-  private List<TradeOffer> assignedTradeOffers = new ArrayList<>();
 
-  // Needed by Gson
-  public Resident() {
-  }
+  // renamed field
+  private List<TradeOffer> takenTradeOffers = new ArrayList<>();
+
+  // owned offers
+  private List<TradeOffer> ownedTradeOffers = new ArrayList<>();
+
+  public Resident() { }
 
   public Resident(String name, int personalPoints, int greenPoints) {
     this.name = name;
@@ -20,38 +23,30 @@ public class Resident {
     this.greenPoints = greenPoints;
   }
 
-  // --- getters & setters ---
+  public String getName() { return name; }
+  public void setName(String name) { this.name = name; }
 
-  public String getName() {
-    return name;
+  public int getPersonalPoints() { return personalPoints; }
+  public void setPersonalPoints(int personalPoints) { this.personalPoints = personalPoints; }
+
+  public int getGreenPoints() { return greenPoints; }
+  public void setGreenPoints(int greenPoints) { this.greenPoints = greenPoints; }
+
+  // renamed list
+  public List<TradeOffer> getTakenTradeOffers() {
+    return takenTradeOffers;
   }
 
-  public void setName(String name) {
-    this.name = name;
+  public void setTakenTradeOffers(List<TradeOffer> takenTradeOffers) {
+    this.takenTradeOffers = takenTradeOffers;
   }
 
-  public int getPersonalPoints() {
-    return personalPoints;
+  public List<TradeOffer> getOwnedTradeOffers() {
+    return ownedTradeOffers;
   }
 
-  public void setPersonalPoints(int personalPoints) {
-    this.personalPoints = personalPoints;
-  }
-
-  public int getGreenPoints() {
-    return greenPoints;
-  }
-
-  public void setGreenPoints(int greenPoints) {
-    this.greenPoints = greenPoints;
-  }
-
-  public List<TradeOffer> getAssignedTradeOffers() {
-    return assignedTradeOffers;
-  }
-
-  public void setAssignedTradeOffers(List<TradeOffer> assignedTradeOffers) {
-    this.assignedTradeOffers = assignedTradeOffers;
+  public void setOwnedTradeOffers(List<TradeOffer> ownedTradeOffers) {
+    this.ownedTradeOffers = ownedTradeOffers;
   }
 
   @Override

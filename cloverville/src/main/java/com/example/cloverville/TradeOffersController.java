@@ -104,11 +104,14 @@ public class TradeOffersController implements Initializable {
 
     offers.add(newOffer);
 
+    owner.getOwnedTradeOffers().add(newOffer);
+
     ownerComboBox.getSelectionModel().clearSelection();
     offerField.clear();
     priceField.clear();
 
     saveOffersToJson();
+    saveResidentsToJson();
   }
 
   @FXML
@@ -116,10 +119,12 @@ public class TradeOffersController implements Initializable {
     TradeOffer selected = tradeTable.getSelectionModel().getSelectedItem();
     if (selected != null) {
       offers.remove(selected);
-      // (optional) also remove from residents' assigned lists
+
       for (Resident r : residents) {
-        r.getAssignedTradeOffers().removeIf(o -> o.equals(selected));
+        r.getTakenTradeOffers().removeIf(o -> o == selected);
+        r.getOwnedTradeOffers().removeIf(o -> o == selected);   // 🔹 new
       }
+
       saveOffersToJson();
       saveResidentsToJson();
     }
@@ -149,6 +154,12 @@ public class TradeOffersController implements Initializable {
       System.out.println("No task or resident selected.");
       return;
     }
+
+    System.out.println("=== ASSIGN OFFER ===");
+    System.out.println("Offer: " + selectedOffer.getTradeOffer());
+    System.out.println("Price/Service text: " + selectedOffer.getPriceOrService());
+    System.out.println("Point cost stored on offer: " + selectedOffer.getPointCost());
+
 
     Resident ownerResident = residents.stream()
         .filter(r -> r.getName().equals(selectedOffer.getOwner()))
@@ -191,8 +202,8 @@ public class TradeOffersController implements Initializable {
     selectedOffer.setStatus("Assigned to " + assignedResident.getName());
     tradeTable.refresh();
 
-    if (!assignedResident.getAssignedTradeOffers().contains(selectedOffer)) {
-      assignedResident.getAssignedTradeOffers().add(selectedOffer);
+    if (!assignedResident.getTakenTradeOffers().contains(selectedOffer)) {
+      assignedResident.getTakenTradeOffers().add(selectedOffer);
     }
 
     saveOffersToJson();

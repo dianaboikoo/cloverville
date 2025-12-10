@@ -1,20 +1,59 @@
 [
   {
     "name": "LALIPUP",
-    "personalPoints": 10,
+    "personalPoints": 40,
     "greenPoints": 0,
-    "assignedTradeOffers": []
+    "takenTradeOffers": [
+      {
+        "owner": "LOLILO",
+        "tradeOffer": "hedbfh",
+        "priceOrService": "10",
+        "status": "Assigned to LALIPUP",
+        "pointCost": 10
+      },
+      {
+        "owner": "LOLILO",
+        "tradeOffer": "jhwbqd",
+        "priceOrService": "wjqdbh",
+        "status": "Assigned to LALIPUP"
+      }
+    ],
+    "ownedTradeOffers": [
+      {
+        "owner": "LALIPUP",
+        "tradeOffer": "test1",
+        "priceOrService": "10",
+        "status": "Assigned to LOLILO",
+        "pointCost": 10
+      }
+    ]
   },
   {
     "name": "LOLILO",
-    "personalPoints": 20,
+    "personalPoints": 10,
     "greenPoints": 0,
-    "assignedTradeOffers": [
+    "takenTradeOffers": [
       {
         "owner": "LALIPUP",
-        "tradeOffer": "nhqhs",
+        "tradeOffer": "test1",
         "priceOrService": "10",
-        "status": "Assigned to LOLILO"
+        "status": "Assigned to LOLILO",
+        "pointCost": 10
+      }
+    ],
+    "ownedTradeOffers": [
+      {
+        "owner": "LOLILO",
+        "tradeOffer": "hedbfh",
+        "priceOrService": "10",
+        "status": "Assigned to LALIPUP",
+        "pointCost": 10
+      },
+      {
+        "owner": "LOLILO",
+        "tradeOffer": "jhwbqd",
+        "priceOrService": "wjqdbh",
+        "status": "Assigned to LALIPUP"
       }
     ]
   }

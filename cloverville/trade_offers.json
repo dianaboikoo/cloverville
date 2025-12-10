@@ -1,32 +1,29 @@
 [
   {
-    "owner": "Alice",
-    "tradeOffer": "bvgh",
-    "priceOrService": "hvh",
-    "status": "Assigned"
-  },
-  {
-    "owner": "Bob",
-    "tradeOffer": "jhwqhd",
-    "priceOrService": "5",
-    "status": "Assigned"
-  },
-  {
-    "owner": "Bob",
-    "tradeOffer": "hbh",
-    "priceOrService": "5",
-    "status": "Assigned"
-  },
-  {
-    "owner": "Bob",
-    "tradeOffer": "hbh",
-    "priceOrService": "5",
-    "status": "Assigned"
+    "owner": "LOLILO",
+    "tradeOffer": "jhhj",
+    "priceOrService": "10",
+    "status": "Assigned to LALIPUP",
+    "pointCost": 10
   },
   {
     "owner": "LALIPUP",
-    "tradeOffer": "nhqhs",
+    "tradeOffer": "test1",
     "priceOrService": "10",
-    "status": "Assigned to LOLILO"
+    "status": "Assigned to LOLILO",
+    "pointCost": 10
+  },
+  {
+    "owner": "LOLILO",
+    "tradeOffer": "hedbfh",
+    "priceOrService": "10",
+    "status": "Assigned to LALIPUP",
+    "pointCost": 10
+  },
+  {
+    "owner": "LOLILO",
+    "tradeOffer": "jhwbqd",
+    "priceOrService": "wjqdbh",
+    "status": "Assigned to LALIPUP"
   }
 ]
